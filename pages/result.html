@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Credify Verify | Result</title>
+<link rel="stylesheet" href="../assets/css/style.css"/>
+</head>
+<body data-page="result" class="site-page">
+<canvas id="matrixRain" class="matrix-rain" aria-hidden="true"></canvas>
+<div class="home-noise"></div>
+
+<div class="site-shell site-shell-wide">
+
+<header class="page-hero">
+<div class="home-brand-row">
+<div class="logo">C</div>
+<span class="home-brand-text">Credify</span>
+</div>
+<div class="badge home-badge">Blockchain Verification Portal</div>
+<h1 id="resultHeading" class="home-title">Verification Output</h1>
+<div class="result-actions-row">
+<div id="statusBadge" class="badge">Ready</div>
+<a id="verifyAnotherBtn" href="../index.html" class="btn-secondary">← Verify Another</a>
+</div>
+</header>
+
+<section class="result-host" id="resultCard" data-certificate-source="gprec-credify"></section>
+
+<p class="result-note">
+Verified offline • You can use this Credential ID in our portal and re-verify via credify.com (will be added soon!)
+</p>
+
+<footer class="home-footer">
+<p>Offline signature validation active • Built for employers, institutions, and audit teams</p>
+<nav class="home-footer-links" aria-label="Legal and support">
+<a href="info/privacy.html">Privacy Policy</a>
+<a href="info/trust.html">Trust Framework</a>
+<a href="info/support.html">Support</a>
+</nav>
+</footer>
+
+</div>
+
+<script src="https://unpkg.com/@zxing/library@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/pako@2.1.0/dist/pako.min.js"></script>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

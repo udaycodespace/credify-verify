@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Credify Verify</title>
+<link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+
+<body class="home-page" data-page="home">
+<canvas id="matrixRain" class="matrix-rain" aria-hidden="true"></canvas>
+<div class="home-noise"></div>
+
+<div class="home-shell">
+	<header class="home-hero slide-in">
+		<div class="home-brand-row">
+			<div class="logo">C</div>
+			<span class="home-brand-text">Credify</span>
+		</div>
+
+		<div class="badge home-badge">Blockchain Verification Portal</div>
+
+		<h1 class="home-title glitch" data-text="Credential Scanner Online">
+			Credential Scanner Online
+		</h1>
+
+		<p class="home-subtitle">
+			Trusted offline-first verification for academic credentials. Scan once, validate instantly.
+		</p>
+
+		<div class="home-terminal">
+			<span class="home-terminal-label">System Log</span>
+			<p id="homeTypeLine" class="home-terminal-line">
+				Initializing verification engine...
+			</p>
+		</div>
+	</header>
+
+	<main class="home-main fade-in">
+		<section class="home-scan-card" onclick="window.location.href='pages/scan.html'" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){window.location.href='pages/scan.html';}">
+			<div class="home-scan-icon-wrap">
+				<span class="home-scan-icon" aria-hidden="true">📸</span>
+			</div>
+
+			<h2 class="home-scan-title">Scan QR Code</h2>
+			<p class="home-scan-text">
+				Use your device camera to scan the credential QR. Security token validity is checked with a 48-hour window.
+			</p>
+
+			<button class="btn-primary home-scan-btn" type="button">Scan Now</button>
+		</section>
+
+		<section class="home-meta-strip">
+			<p>No login required</p>
+			<p>Offline signature verification</p>
+			<p>No student data leaves your browser</p>
+		</section>
+	</main>
+
+	<footer class="home-footer">
+		<p>
+			Offline verification active • QR validity window: 48 hours • Network-independent signature trust
+		</p>
+		<nav class="home-footer-links" aria-label="Legal and support">
+			<a href="pages/info/privacy.html">Privacy Policy</a>
+			<a href="pages/info/trust.html">Trust Framework</a>
+			<a href="pages/info/support.html">Support</a>
+		</nav>
+	</footer>
+</div>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

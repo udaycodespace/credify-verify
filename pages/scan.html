@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Credify Verify | Scan</title>
+<link rel="stylesheet" href="../assets/css/style.css"/>
+</head>
+<body data-page="scan" class="site-page">
+<canvas id="matrixRain" class="matrix-rain" aria-hidden="true"></canvas>
+<div class="home-noise"></div>
+
+<div class="site-shell">
+
+<header class="page-hero">
+
+<div class="home-brand-row">
+<div class="logo">C</div>
+<span class="home-brand-text">Credify</span>
+</div>
+
+<div class="badge home-badge">Quantum Verification Portal</div>
+
+<h1 class="home-title">Scan Credential QR</h1>
+
+<p class="home-subtitle">Point your camera at the certificate QR. Verification is processed locally in your browser with issuer-key validation.</p>
+
+</header>
+
+<main class="scan-main">
+
+<section class="scan-panel">
+
+<div class="scan-actions">
+<button id="startScanBtn" class="btn-primary" style="flex: 1;">Start Camera</button>
+<button id="stopScanBtn" class="btn-secondary" disabled style="flex: 1;">Stop</button>
+</div>
+
+<div class="scan-countdown-wrap" aria-live="polite">
+<p id="scanCountdown" class="scan-countdown">Scan window: 20s</p>
+<div class="scan-progress"><div id="scanProgressBar" class="scan-progress-bar"></div></div>
+</div>
+
+<div id="scanFeedback" class="scan-feedback">Ready to scan.</div>
+
+<div class="scan-video-wrap">
+<div style="position: relative; width: 100%; height: 100%;">
+	<video id="camera" autoplay muted playsinline style="width: 100%; height: 100%; object-fit: cover;"></video>
+	<!-- Scanning box overlay -->
+	<div id="scanBoxOverlay" style="position: absolute; top: 50%; left: 50%; width: 240px; height: 240px; transform: translate(-50%, -50%); border: 3px solid #10b981; border-radius: 12px; box-shadow: 0 0 16px #10b98188; pointer-events: none; z-index: 2;"></div>
+</div>
+</div>
+
+</section>
+
+</main>
+
+<div class="page-nav-back">
+<a href="../index.html">← Back</a>
+</div>
+
+<footer class="home-footer">
+<p>Offline verification • No login required • QR validity window: 48 hours</p>
+<nav class="home-footer-links" aria-label="Legal and support">
+<a href="info/privacy.html">Privacy Policy</a>
+<a href="info/trust.html">Trust Framework</a>
+<a href="info/support.html">Support</a>
+</nav>
+</footer>
+
+</div>
+
+<script src="https://unpkg.com/@zxing/library@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/pako@2.1.0/dist/pako.min.js"></script>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>
