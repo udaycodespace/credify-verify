@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Credify Verify | Tampered Alert</title>
+<link rel="stylesheet" href="../assets/css/style.css"/>
+</head>
+<body data-page="tampered" class="site-page">
+<canvas id="matrixRain" class="matrix-rain" aria-hidden="true"></canvas>
+<div class="home-noise"></div>
+
+<div class="site-shell">
+  <header class="page-hero">
+    <div class="home-brand-row">
+      <div class="logo">C</div>
+      <span class="home-brand-text">Credify</span>
+    </div>
+    <div class="badge badge-error">Security Alert</div>
+    <h1 class="home-title">Fake or Tampered Credential</h1>
+    <p class="home-subtitle">The scanned QR failed integrity checks and cannot be trusted.</p>
+  </header>
+
+  <section class="tampered-card">
+    <h2>Verification Blocked</h2>
+    <p id="tamperedReason">Reason unavailable.</p>
+    <p class="tampered-help">Request a newly issued PDF from the candidate. If this repeats, treat the credential as suspicious and escalate to issuer admin.</p>
+    <div class="tampered-actions">
+      <a class="btn-secondary" href="scan.html">Scan Again</a>
+      <a class="btn-primary" href="../index.html">Back to Home</a>
+    </div>
+  </section>
+</div>
+
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

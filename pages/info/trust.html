@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Credify Verify | Trust Framework</title>
+<link rel="stylesheet" href="../../assets/css/style.css"/>
+</head>
+<body class="site-page" data-page="trust">
+<canvas id="matrixRain" class="matrix-rain" aria-hidden="true"></canvas>
+<div class="home-noise"></div>
+
+<div class="info-shell">
+  <header class="page-hero">
+    <div class="home-brand-row">
+      <div class="logo">C</div>
+      <span class="home-brand-text">Credify</span>
+    </div>
+    <div class="badge home-badge">Trust Framework</div>
+    <h1 class="home-title">Verification Model</h1>
+  </header>
+
+  <section class="info-card">
+    <h2>How Trust is Established</h2>
+    <ul>
+      <li>Issuer identity is anchored to trusted DID keys.</li>
+      <li>QR token signatures are validated with RSA-PSS (PS256 profile).</li>
+      <li>Credential ID integrity is cross-checked between URL and token payload.</li>
+      <li>Optional payload digest binding guards against QR payload tampering.</li>
+      <li>Validity window checks enforce QR freshness using generated timestamp.</li>
+    </ul>
+    <p>These checks are performed locally in-browser before the result screen is rendered.</p>
+  </section>
+
+  <div class="page-nav-back"><a href="../../index.html">← Back to Home</a></div>
+
+  <footer class="home-footer">
+    <nav class="home-footer-links" aria-label="Footer links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="trust.html">Trust Framework</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </footer>
+</div>
+
+<script src="../../assets/js/app.js"></script>
+</body>
+</html>
