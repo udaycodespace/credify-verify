@@ -1,45 +1,141 @@
-# Credify Verify (GitHub Pages)
+<div align="center">
 
-Static, scanner-only Credify verifier designed for GitHub Pages.
+# Credify Verify
 
-## Behavior
+**PDF academic transcript verifier for students and institutional verifiers.**
 
-- Camera scan only (no upload, no paste)
-- Cyber-style UI with matrix/falling-letter background effect
-- Accepts Credify verification URLs containing:
-  - `id` (required)
-  - `qk` (required)
-  - `qd` (optional)
-  - `gt` (optional, used for 48-hour check)
-- Verifies issuer JWS signature offline using trusted issuer public keys
-- Shows full credential fields only when `qd` exists in the QR URL
+[![Status](https://img.shields.io/badge/status-active-brightgreen?style=flat-square)](.) [![Built with](https://img.shields.io/badge/HTML-CSS--JS-ff69b4?style=flat-square&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web)
 
-## Run locally
+Live → https://udaycodespace.github.io/credify-verify/ · Issues · Docs
 
-Open `index.html` with a local static server (recommended):
+</div>
 
-- Python: `python -m http.server 8080`
-- Node: `npx serve .`
+---
 
-Then open `http://localhost:8080`.
+## What this is
 
-## Deploy to GitHub Pages
+`Credify Verify` is a static verification client that lets verifiers check academic PDF credentials (transcripts/certificates) locally in the browser.
 
-1. Push this folder to a repo branch.
-2. In repository settings, enable GitHub Pages.
-3. Set source to the branch/folder containing these static files.
-4. Open the published URL and use `pages/scan.html` flow.
+It verifies QR/proof data and credential anchors against a local trust list (`data/trusted_issuers.json`) without requiring a backend — built as an independent verification boundary for the Credify issuance platform.
 
-## Structure
+---
 
-- `index.html` at root as the deploy entry page
-- `pages/scan.html`, `pages/result.html`, `pages/tampered.html` for scanner workflow pages
-- `pages/info/privacy.html`, `pages/info/trust.html`, `pages/info/support.html` for footer pages
-- `assets/css/style.css` for all styles
-- `assets/js/app.js` for scan, verify, matrix rain, and UI behavior
-- `assets/data/trusted_issuers.json` for trusted issuer key registry
+## Stack
 
-## Trusted issuers
+| Layer | Tech |
+|---|---|
+| Frontend | HTML, CSS, JavaScript (vanilla) |
+| Backend | None (static client) |
+| Storage | Local files; IPFS references in payloads |
+| Auth | No authentication required (verifier access is public) |
+| Deployment | GitHub Pages / any static host |
 
-Issuer public keys are loaded from `assets/data/trusted_issuers.json`.
-An embedded fallback is present in `assets/js/app.js` for resiliency.
+---
+
+## Features
+
+- Upload or scan a student PDF to extract QR or embedded proof data.
+- Validate credential anchor and issuer against `data/trusted_issuers.json`.
+- Show clear verification outcomes: verified (`pages/result.html`) or tampered (`pages/tampered.html`).
+- Offline-capable verification flow — no backend dependency for basic checks.
+- Simple informational pages: `pages/info/privacy.html`, `pages/info/support.html`, `pages/info/trust.html`.
+
+---
+
+## Screens
+
+Screenshots of the main verification flows.
+
+| Scan PDF | Verified result |
+|:---:|:---:|
+| ![Scan UI](./assets/screens/scan.png) | ![Verified result](./assets/screens/result.png) |
+
+| Tampered result | Info pages |
+|:---:|:---:|
+| ![Tampered result](./assets/screens/tampered.png) | ![Info pages](./assets/screens/info.png) |
+
+---
+
+## Running locally
+
+**Prerequisites**
+
+- A modern browser (Chrome / Edge / Firefox)
+- Optional: Python to serve files locally
+
+```powershell
+# From repository root
+python -m http.server 8000
+# Then open http://localhost:8000 in your browser
+```
+
+Opening `index.html` via `file://` may limit some browser APIs; prefer a local HTTP server.
+
+No environment variables are required — the verifier is static and reads `data/trusted_issuers.json`.
+
+---
+
+## Project structure
+
+```
+.
+├── index.html
+├── README.md
+├── TEMPLATE.md
+├── assets/
+│   ├── css/
+│   └── screens/
+├── data/
+│   └── trusted_issuers.json
+├── js/
+│   └── app.js
+├── pages/
+│   ├── scan.html
+│   ├── result.html
+│   └── tampered.html
+└── pages/info/
+    ├── privacy.html
+    ├── support.html
+    └── trust.html
+```
+
+---
+
+## Known gaps
+
+- No client-side cryptographic signature verification of issuer keys (hash/anchor checks are performed; full signature validation is not implemented here).
+- No automated test coverage for the static client.
+- Basic responsive layout only; mobile UX can be improved.
+
+---
+
+## Roadmap
+
+- Add client-side RSA signature verification using issuer public keys.
+- Fetch trusted issuers from a signed, hosted endpoint and support key rotation.
+- Add end-to-end tests and CI publishing to GitHub Pages.
+
+---
+
+## Status
+
+![active](https://img.shields.io/badge/status-active-brightgreen?style=flat-square)
+
+---
+
+## License
+
+Proprietary — All rights reserved. See [LICENSE](./LICENSE) for details.
+
+For permissions or licensing inquiries, contact the project owner:
+
+- GitHub: https://github.com/udaycodespace
+- LinkedIn: https://www.linkedin.com/in/somapuram-uday/
+
+See [LICENSE-FAQ.md](./LICENSE-FAQ.md) for common questions about licensing and permissions.
+
+---
+
+<div align="center">
+  <sub>Built by <a href="https://github.com/udaycodespace">udaycodespace</a> · 2026</sub>
+</div>
